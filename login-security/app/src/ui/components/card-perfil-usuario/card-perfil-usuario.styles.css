@@ -1,0 +1,28 @@
+.cardPerfilUsuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    color: black;
+
+    padding: 1em;
+    width: 20em;
+    border-radius: 0.5em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    text-align: center;
+
+    background-color: white;
+
+    transition: 0.5s;
+}
+.cardPerfilUsuario:hover{
+    transform: scale(1.05);
+
+}
+
+.cardPerfilUsuario__image{
+    width: 100%;
+    border-radius: 50%;
+}
