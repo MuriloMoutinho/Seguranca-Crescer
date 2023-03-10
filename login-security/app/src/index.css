@@ -14,3 +14,10 @@ body{
 a{
   text-decoration: none;
 }
+
+.formLogin{
+  padding: 2em;
+  border-radius: 1em;
+  background-color: white;
+  box-shadow: 0 0 1em black;
+}

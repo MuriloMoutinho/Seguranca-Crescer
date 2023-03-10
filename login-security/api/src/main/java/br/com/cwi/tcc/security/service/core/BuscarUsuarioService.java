@@ -16,8 +16,14 @@ public class BuscarUsuarioService {
 
     public Usuario buscarPorId(Long id) {
 
-        return  usuarioRepository
+        return usuarioRepository
                 .findById(id)
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Usuário não encontrado"));
+    }
+
+    public Usuario buscarPorEmail(String email){
+
+        return usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Usuário não encontrado"));
     }
 }

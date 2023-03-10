@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static org.springframework.http.HttpMethod.POST;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
@@ -26,7 +25,7 @@ public class SecurityConfig {
         http
                 .csrf().disable().cors()
                 .and()
-                .authorizeRequests().antMatchers(POST, "/auth/**").permitAll()
+                .authorizeRequests().antMatchers("/auth/**").permitAll()
                 .and()
                 .authorizeRequests().anyRequest().authenticated()
                 .and()

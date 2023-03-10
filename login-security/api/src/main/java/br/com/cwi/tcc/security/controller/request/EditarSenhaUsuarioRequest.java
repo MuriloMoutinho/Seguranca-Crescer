@@ -8,17 +8,8 @@ import javax.validation.constraints.Size;
 
 @Getter
 @Setter
-public class EditarUsuarioRequest {
+public class EditarSenhaUsuarioRequest {
 
-    @NotBlank
-    @Size(max = 255)
-    private String nome;
-    @NotBlank
-    @Size(max = 255)
-    private String email;
-    @NotBlank
-    @Size(max = 512)
-    private String imagem;
     @NotBlank
     @Size(max = 128)
     private String senha;

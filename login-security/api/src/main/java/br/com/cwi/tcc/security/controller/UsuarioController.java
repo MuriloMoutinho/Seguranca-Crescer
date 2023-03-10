@@ -2,8 +2,7 @@ package br.com.cwi.tcc.security.controller;
 
 import br.com.cwi.tcc.security.controller.request.EditarUsuarioRequest;
 import br.com.cwi.tcc.security.controller.response.UsuarioResponse;
-import br.com.cwi.tcc.security.service.DetalharUsuarioLogadoService;
-import br.com.cwi.tcc.security.service.EditarUsuarioService;
+import br.com.cwi.tcc.security.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +18,8 @@ public class UsuarioController {
     @Autowired
     private DetalharUsuarioLogadoService detalharUsuarioLogadoService;
 
-    @PutMapping("/{id}/editar")
+
+    @PutMapping("/{id}")
     public UsuarioResponse editar(@PathVariable Long id, @Valid @RequestBody EditarUsuarioRequest request) {
         return editarUsuarioService.editar(id, request);
     }
@@ -28,7 +28,6 @@ public class UsuarioController {
     public UsuarioResponse detalharUsuarioLogado() {
         return detalharUsuarioLogadoService.detalhar();
     }
-
 
 
 }

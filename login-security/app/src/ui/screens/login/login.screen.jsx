@@ -66,6 +66,7 @@ export function LoginScreen() {
             </InputWrapper>
 
             <Button>Enviar</Button>
+            <Link to={ROUTER_PATH.FORGOT_PASSWORD}>Esqueci minha senha</Link>
             <Link to={ROUTER_PATH.REGISTRAR}>Não possui uma conta? Cadastre-se</Link>
           </Container>
         </form>

@@ -34,5 +34,9 @@ public class Usuario {
         this.permissoes.add(permissao);
         permissao.setUsuario(this);
     }
+
+    @OneToOne(mappedBy = "usuario")
+    private EditarSenhaToken editarSenhaToken;
+
 }
 
