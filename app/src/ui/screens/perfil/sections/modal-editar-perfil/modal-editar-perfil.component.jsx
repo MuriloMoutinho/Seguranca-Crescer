@@ -22,7 +22,7 @@ export function ModalEditarPerfil({ onClickClose, onClickSubmit }) {
     nome: { ...MODEL_OBJECT_NOT_EMPTY_FORM, value: user.nome },
     imagem: { ...MODEL_OBJECT_EMPTY_FORM, value: user.imagem },
     email: { ...MODEL_OBJECT_NOT_EMPTY_FORM, value: user.email },
-    senha: { ...MODEL_OBJECT_EMPTY_FORM },
+    senha: { ...MODEL_OBJECT_NOT_EMPTY_FORM },
   };
 
   async function onSubmitRate() {

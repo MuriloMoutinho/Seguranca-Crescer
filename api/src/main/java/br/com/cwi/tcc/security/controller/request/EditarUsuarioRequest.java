@@ -18,6 +18,7 @@ public class EditarUsuarioRequest {
     private String email;
     @Size(max = 512)
     private String imagem;
+    @NotBlank
     @Size(max = 128)
     private String senha;
 
