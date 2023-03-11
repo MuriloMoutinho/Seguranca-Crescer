@@ -15,12 +15,14 @@ export function useRegistrar() {
     apelido
   ) {
     try {
+      const imagemFinal = imagemPerfil || null
+
       const user = await registrarUser(
         nomeCompleto,
         dataNascimento,
         email,
         senha,
-        imagemPerfil,
+        imagemFinal,
         apelido
       );
 
