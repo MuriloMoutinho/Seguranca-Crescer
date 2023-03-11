@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  postgresdb:
+    container_name: postgres-db
+    build:
+      context: ./api/data
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=login-seguranca
+      - POSTGRES_PASSWORD=login-seguranca
+      - POSTGRES_DB=login-seguranca
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - api
+
+  api:
+    container_name: api-java
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=postgresdb
+      - DB_PORT=5432
+      - DB_NAME=login-seguranca
+      - DB_USER=login-seguranca
+      - DB_PASSWORD=login-seguranca
+      - API_EMAIL=
+      - API_EMAIL_APP_PASSWORD=
+    ports:
+      - "8080:8080"
+    networks:
+      - api
+      - app
+    depends_on:
+      - postgresdb
+
+  app:
+    container_name: app-react
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
+
+networks:
+  api:
+  app:
