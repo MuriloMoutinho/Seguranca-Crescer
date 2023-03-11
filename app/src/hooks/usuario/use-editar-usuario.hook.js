@@ -13,10 +13,8 @@ export function useEditarUsuario() {
     imagem
   ) {
     try {
-      const senhaFinal = senha || null
-      const imagemFinal = imagem || null
 
-      await editarUsuario(idUsuario, nome, email, senhaFinal, imagemFinal );
+      await editarUsuario(idUsuario, nome, email, senha, imagem );
       setError(false);
       setSuccess("Perfil editado");
     } catch (error) {
