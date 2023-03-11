@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+ postgresdb:
+    container_name: postgres-db-solo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=login-seguranca
+      - POSTGRES_PASSWORD=login-seguranca
+      - POSTGRES_DB=login-seguranca
+    volumes:
+      - postgres_data_solo:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - api
+
+volumes:
+  postgres_data_solo:
+
+networks:
+  api:

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.cwi</groupId>
-	<artifactId>tcc</artifactId>
+	<artifactId>security-login</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tcc</name>
-	<description>Projeto tcc</description>
+	<name>security-login</name>
+	<description>security-login</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
